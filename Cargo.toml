@@ -1,0 +1,8 @@
+[workspace]
+members = [
+  "mesh-core",
+  "mesh-mem",
+  "mesh-cpu",
+  "mesh-clock",
+  "mesh-voltage",
+]
