@@ -1,14 +1,14 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use serde::Serialize;
+use serde_json;
+
+#[derive(Serialize)]
+pub struct WaybarPayload {
+    pub text: String,
+    pub description: Option<String>,
+    pub graphics: Option<Vec<String>>,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn print_waybar(payload: &WaybarPayload) {
+    let json = serde_json::to_string(payload).unwrap();
+    println!("{json}");
 }
