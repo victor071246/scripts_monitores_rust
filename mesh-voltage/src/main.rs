@@ -1,4 +1,3 @@
-use std::fmt::format;
 
 use mesh_core::{WaybarPayload, print_waybar};
 
@@ -8,11 +7,18 @@ fn read_cpu_temp_c() -> std::io::Result<f32> {
     Ok(processed_temp / 1000.0_f32)
 }
 
+fn read_voltage() -> std::io::Result<f32> {
+    let raw_voltage = std::fs::read_to_string("/sys/class/power_supply_BAT0/voltage_now")?;
+    let microvolts: f32 = raw_voltage.trim().parse().unwrap_or(0.0);
+    Ok(microvolts / 1_000_000.0)
+}
+
 fn main(){
 
-    let temperature = read_cpu_temp_c().unwrap_or(0.0_f32);
+    let temperature = read_cpu_temp_c().unwrap_or(0.00_f32);
+    let voltage = read_voltage().unwrap_or(0.00_f32);
 
-    let string: String = format!("{temperature}ºC 12.0V");
+    let string: String = format!("{temperature}ºC {voltage}V");
 
 
     let payload = WaybarPayload {
