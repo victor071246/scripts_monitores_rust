@@ -4,6 +4,6 @@ members = [
   "mesh-mem",
   "mesh-cpu",
   "mesh-clock",
-  "mesh-voltage",
+  "mesh-temp",
 ]
 

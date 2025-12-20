@@ -35,7 +35,7 @@ name = "mesh-mem"
 version = "0.1.0"
 
 [[package]]
-name = "mesh-voltage"
+name = "mesh-temp"
 version = "0.1.0"
 dependencies = [
  "mesh-core",
