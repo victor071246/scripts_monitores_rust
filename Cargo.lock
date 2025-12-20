@@ -29,6 +29,18 @@ dependencies = [
 [[package]]
 name = "mesh-cpu"
 version = "0.1.0"
+dependencies = [
+ "mesh-core",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "mesh-cpu-usage-thread"
+version = "0.1.0"
+dependencies = [
+ "mesh-core",
+]
 
 [[package]]
 name = "mesh-mem"
@@ -39,8 +51,6 @@ name = "mesh-temp"
 version = "0.1.0"
 dependencies = [
  "mesh-core",
- "serde",
- "serde_json",
 ]
 
 [[package]]

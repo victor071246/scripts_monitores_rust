@@ -4,6 +4,7 @@ members = [
   "mesh-mem",
   "mesh-cpu",
   "mesh-clock",
-  "mesh-temp",
+  "mesh-temp", 
+  "mesh-cpu-usage-thread",
 ]
 
