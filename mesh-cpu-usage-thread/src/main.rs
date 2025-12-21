@@ -1,9 +1,11 @@
 use std::time::Duration;
 use mesh_core::{WaybarPayload, print_waybar};
 
+
+
 fn read_cpu_clock_threads() -> Vec<f32> {
-    const MAX_CLOCK: f32 = 4.268572;
-    const MIN_CLOCK: f32 = 2.391429;
+    const MAX_CLOCK: f32 = 4268.572;
+    const MIN_CLOCK: f32 = 2391.429;
     let mut clocks_usage_percent_from_threads = Vec::new();
 
     for cpu_id in 0..12 {
@@ -24,4 +26,10 @@ fn read_cpu_clock_threads() -> Vec<f32> {
     clocks_usage_percent_from_threads
 }
 
-fn main(){}
+fn main(){
+
+    // Uso de clock
+    let clock_usage_percent_from_threads = read_cpu_clock_threads();
+    let formatted_string = format!("Threads usage {clock_usage_percent_from_threads:?}");
+    println!("{formatted_string}");
+}
