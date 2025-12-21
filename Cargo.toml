@@ -5,6 +5,6 @@ members = [
   "mesh-cpu",
   "mesh-clock",
   "mesh-temp", 
-  "mesh-cpu-usage-thread",
+  "six-cpu-clock",
 ]
 
