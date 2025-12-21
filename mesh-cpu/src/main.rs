@@ -53,7 +53,7 @@ fn take_snapshots_and_return_value() -> f32{
     let percent: f32 = (busy_process_count / total_process_count) * 100.0;
 
 
-    println!("{busy_process_count} {total_process_count} {percent:.2}");
+    // println!("{busy_process_count} {total_process_count} {percent:.2}");
     
     percent
 }
