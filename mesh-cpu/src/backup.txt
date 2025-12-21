@@ -75,9 +75,9 @@ async fn main() {
     let snapshot1 = create_cpu_snapshot().await;
     
     let mut i = 0;
-    while i < 100 {
+    while i < 200 {
         sleep(Duration::from_millis(1)).await;
-        println!("a");
+        println!();
         i += 1;
     }
 
@@ -90,7 +90,7 @@ async fn main() {
     let percent: f64 = (diff_busy / diff_total) * 100.0;
     
     let bars_string: String = percent_to_bars(&percent );
-    let string: String = format!("{percent:05.2}% {bars_string} ");
+    let string: String = format!("{percent:05.2} {bars_string}");
     //let string: String = format!("05.44% █░░░░░░░░░");
 
 

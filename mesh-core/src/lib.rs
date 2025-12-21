@@ -1,7 +1,7 @@
 use serde::Serialize;
 use serde_json;
 
-pub fn percent_to_bars(number_float: &f32) -> String {
+pub fn percent_to_bars(number_float: &f64) -> String {
     let number_rounded = (number_float / 10.0).round() * 10.0;
     let number_int: i32 = number_rounded as i32;
     let max_tiles: i32 = 10;
