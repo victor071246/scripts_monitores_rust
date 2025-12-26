@@ -2,7 +2,7 @@ use std::time::Duration;
 use mesh_core::{WaybarPayload, print_waybar};
 
 fn read_cpu_temp_c() -> std::io::Result<f32> {
-    let raw_temp = std::fs::read_to_string("/sys/class/hwmon/hwmon1/temp1_input")?;
+    let raw_temp = std::fs::read_to_string("/sys/class/hwmon/hwmon2/temp1_input")?;
     let processed_temp: f32 = raw_temp.trim().parse().unwrap_or(0.0);
     Ok(processed_temp / 1000.0_f32)
 }
